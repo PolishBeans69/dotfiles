@@ -1,0 +1,125 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "custom/timee"
+    ],
+    "modules-right": [
+        "custom/networker2",
+        "custom/networker",
+        "custom/networker3",
+        "battery",
+        "custom/battery2",
+        "backlight",
+        "pulseaudio"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5"
+        },
+        "persistent_workspaces": {
+            "*": 1
+        }
+    },
+    "hyprland/window": {
+        "format": "{}"
+    },
+    "custom/timee": {
+        "exec": "date",
+        "interval": 1,
+    },
+    "custom/weather": {
+        "tooltip": true,
+        "format": "{}",
+        "interval": 3600,
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
+    },
+    "custom/moon": {
+        "format": "{}",
+        "interval": 3600,
+        "exec": "moon"
+    },
+
+    "custom/wall":{
+        "format": "{}",
+        "interval":60,
+        "exec":"r-wall & ",
+        "format-alt":"r-wall &"
+    },
+
+    "custom/temperature": {
+        "tooltip": true,
+        "format": " {}",
+        "interval": 30,
+        "exec": "cpu"
+    },
+    "custom/memory": {
+        "tooltip": true,
+        "format": "🧠 {}",
+        "interval": 30,
+        "exec": "memory"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "BL {percent}%",
+        "on-scroll-up": "backlight_control +1",
+        "on-scroll-down": "backlight_control -1"
+    },
+    "battery": {
+        "format":"{}%",
+        "exec": "acpi | awk '{print $3}' |tr -d ' '",
+        "interval": 10,
+    },
+    "custom/battery2": {
+        "exec": "acpi | awk '{print $5}'",
+        "interval": 10,
+    },
+    "custom/networker": {
+        "format": " {} ",
+        "exec": "iwgetid -r --raw",
+        "interval": 25,
+        "on-click": "iwgtk",
+    },
+    "custom/networker2": {
+        "format": "Net:{}",
+        "on-click": "iwgtk",
+    },
+    "custom/networker3": {
+        "format": "{}   ",
+        "exec": "hostname --ip-address",
+        "interval" : 10,
+        "on-click": "iwgtk",
+    },
+    "pulseaudio": {
+        "format": "AUDIO {volume}%",
+        "tooltip": false,
+        "format-muted": "Muted",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "scroll-step": 100
+        }
+    },
+    "bluetooth": {
+        "format": "BT {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": "BT {num_connections}",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": "BT {device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}"
+    }
+}
