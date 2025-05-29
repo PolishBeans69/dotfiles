@@ -5,9 +5,8 @@
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
-
-# font_family      monospace
-# bold_font        auto
+# font_family      Iosevka Nerd Font Bold
+# bold_font        Iosevka Nerd Font Heavy
 # italic_font      auto
 # bold_italic_font auto
 
@@ -2642,6 +2641,14 @@ confirm_os_window_close 0
 
 
 # BEGIN_KITTY_THEME
-# bl1nk
+# Adapta Nokto Maia
 include current-theme.conf
 # END_KITTY_THEME
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="Iosevka Nerd Font Mono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS

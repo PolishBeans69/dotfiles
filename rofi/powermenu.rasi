@@ -1,32 +1,49 @@
 /*******************************************************
- * ROFI configs i3 powermenu for EndeavourOS
+ * ROFI configs i3 Apps menu for EndeavourOS
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 configuration {
-    font:            "Noto Sans Regular 10";
-    show-icons:      false;
-    icon-theme:      "Qogir";
-    scroll-method:   0;
-    disable-history: false;
-    sidebar-mode:    false;
+    font:                "Iosveka Nerd Font Heavy 12";
+    show-icons:          false;
+    icon-theme:          "Qogir";
+    display-drun:        "";
+    drun-display-format: "{name}";
+    scroll-method:       0;
+    disable-history:     false;
+    sidebar-mode:        false;
 }
 
 @import "~/.config/rofi/arc_dark_transparent_colors.rasi"
 
 window {
-    background-color: @background;
-    border:           0;
-    padding:          10;
-    transparency:     "real";
-    width:            120px;
-    location:         east;
-    /*y-offset:       18;*/
-    /*x-offset:       850;*/
+    background-color: #000000;
+    border:           1;
+    padding:          30;
+    width: 320;
 }
 listview {
-    lines:     7;
-    columns:   1;
-    scrollbar: false;
+    lines:   2;
+    columns: 1;
+}
+mainbox {
+    border:  0;
+    padding: 0;
+}
+message {
+    border:       2px 2px 2px;
+    border-color: @separatorcolor;
+    padding:      1px;
+}
+textbox {
+    text-color: #000000;
+}
+listview {
+    fixed-height: 0;
+    border:       8px 0px 0px;
+    border-color: @separatorcolor;
+    spacing:      8px;
+    scrollbar:    false;
+    padding:      2px 0px 0px;
 }
 element {
     border:  0;
@@ -93,7 +110,7 @@ button.selected {
 }
 inputbar {
     spacing:    0;
-    text-color: @normal-foreground;
+    text-color: #000000;
     padding:    1px;
 }
 case-indicator {
@@ -105,20 +122,17 @@ entry {
     text-color: @normal-foreground;
 }
 prompt {
+    text-color: #000000;
     spacing:    0;
     text-color: @normal-foreground;
 }
 inputbar {
+    text-color: #000000;
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
 textbox-prompt-colon {
     expand:     false;
-    str:        ":";
+    str:        "";
     margin:     0px 0.3em 0em 0em;
     text-color: @normal-foreground;
-}
-
-/*removes the text input line*/
-mainbox {
-  children: [listview];
 }
