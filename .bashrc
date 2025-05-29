@@ -1,3 +1,3 @@
 clear
-neofetch --kitty /home/SSRA/Gowno/neofetch.png --size 300
+fastfetch --logo /home/SSRA/Gowno/neofetch.png --logo-type kitty-direct --logo-width 40
 fish

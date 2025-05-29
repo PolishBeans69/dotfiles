@@ -10,6 +10,8 @@ choice=$(echo -e "$options" | rofi -dmenu -config /home/SSRA/.config/rofi/powerm
 case "$choice" in
     *Shutdown) shutdown now ;;
     *Reboot) reboot ;;
+    *s) shutdown now ;;
+    *r) reboot ;;
     *) exit 1 ;;
 esac
 
