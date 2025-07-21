@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/SSRA/akaszuba/folder-folder/Klasa3-folder/INFORMATYKA 
+cd /home/SSRA/akaszuba/folder-folder/INFORMATYKA 
 git add .
 git commit -m "$(date)"
 git push -u origin main
